@@ -23,6 +23,7 @@ def generar_pdf(recibi_de, cantidad, concepto, recibido_por):
     pdf.cell(140, 10, f"Cantidad en Soles: S/ {cantidad}", ln=True, align='L')
     pdf.cell(140, 10, f"Concepto: {concepto}", ln=True, align='L')
     pdf.cell(140, 10, f"Recibido por: {recibido_por}", ln=True, align='L')
+    pdf.cell(140, 10, f"Firma del receptor del pago:", ln=True, align='L')
 
     # Guardar archivo temporal
     pdf_file = "/tmp/recibo_pago.pdf"
