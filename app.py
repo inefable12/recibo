@@ -3,7 +3,7 @@ from datetime import datetime
 from fpdf import FPDF
 
 def generar_pdf(recibi_de, cantidad, concepto, recibido_por):
-    pdf = FPDF(orientation='L', format=(148, 105))  # A6 horizontal (mitad de A4 aproximadamente)
+    pdf = FPDF(orientation='L', format=(100, 150))  # A6 horizontal (mitad de A4 aproximadamente)
     pdf.add_page()
     pdf.set_font("Arial", size=10)
 
