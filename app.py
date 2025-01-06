@@ -3,26 +3,26 @@ from datetime import datetime
 from fpdf import FPDF
 
 def generar_pdf(recibi_de, cantidad, concepto, recibido_por):
-    pdf = FPDF(format=(105, 148))  # Dimensiones A6 (mitad de A4 aproximadamente)
-    pdf.add_page()
+    pdf = FPDF(format=(148, 105))  # Dimensiones A6 horizontal (mitad de A4 aproximadamente)
+    pdf.add_page(orientation='L')
     pdf.set_font("Arial", size=10)
 
     # Título
     pdf.set_font("Arial", style="B", size=14)
-    pdf.cell(95, 10, "Recibo de Pago", ln=True, align='C')
+    pdf.cell(140, 10, "Recibo de Pago", ln=True, align='C')
     pdf.ln(5)
 
     # Fecha actual
     fecha_actual = datetime.now().strftime("%d/%m/%Y")
     pdf.set_font("Arial", size=10)
-    pdf.cell(95, 10, f"Fecha: {fecha_actual}", ln=True, align='L')
+    pdf.cell(140, 10, f"Fecha: {fecha_actual}", ln=True, align='L')
     pdf.ln(5)
 
     # Información del recibo
-    pdf.cell(95, 10, f"Recibí de: {recibi_de}", ln=True, align='L')
-    pdf.cell(95, 10, f"Cantidad en Soles: S/ {cantidad}", ln=True, align='L')
-    pdf.cell(95, 10, f"Concepto: {concepto}", ln=True, align='L')
-    pdf.cell(95, 10, f"Recibido por: {recibido_por}", ln=True, align='L')
+    pdf.cell(140, 10, f"Recibí de: {recibi_de}", ln=True, align='L')
+    pdf.cell(140, 10, f"Cantidad en Soles: S/ {cantidad}", ln=True, align='L')
+    pdf.cell(140, 10, f"Concepto: {concepto}", ln=True, align='L')
+    pdf.cell(140, 10, f"Recibido por: {recibido_por}", ln=True, align='L')
 
     # Guardar archivo temporal
     pdf_file = "/tmp/recibo_pago.pdf"
